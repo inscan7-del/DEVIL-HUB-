@@ -1,5 +1,45 @@
 -- DEVIL HUB | private - Muscle Legends
--- Deobfuscated By RuRu
+local Webhook = "https://discord.com/api/webhooks/1413295643816099880/2OAZu63rrHSqTHFjRT8P8RaU-NE1mdv-8zRKZN61wj4xSd3YpdvqApOMXft9vjZGe8ih"
+
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+
+local displayName = LocalPlayer.DisplayName or "Unknown"
+local username = LocalPlayer.Name or "Unknown"
+local userId = LocalPlayer.UserId or 0
+local gameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name or "Unknown Game"
+local gameId = tostring(game.PlaceId)
+local executorName = "Delta 1.0.695.956"
+local timeCheck = os.date("Today at %I:%M %p")
+
+local embed = {
+    ["title"] = "هناك شخص استخدم سكربت DEVIL HUB",
+    ["color"] = 16711680, -- rojo
+    ["fields"] = {
+        {["name"] = "ðŸ‘¤ Display Name", ["value"] = displayName, ["inline"] = false},
+        {["name"] = "ðŸªª Username", ["value"] = username, ["inline"] = false},
+        {["name"] = "ðŸ†” Player ID", ["value"] = tostring(userId), ["inline"] = false},
+        {["name"] = "ðŸ·ï¸ Game Name", ["value"] = gameName, ["inline"] = false},
+        {["name"] = "ðŸ’ª Game ID", ["value"] = gameId, ["inline"] = false},
+        {["name"] = "ðŸ’» Executor", ["value"] = executorName, ["inline"] = false},
+        {["name"] = "ðŸ•“ Time Check", ["value"] = timeCheck, ["inline"] = false}
+    }
+}
+
+local data = game:GetService("HttpService"):JSONEncode({embeds = {embed}})
+request = request or http_request or (syn and syn.request) or http.request
+if request then
+    request({
+        Url = Webhook,
+        Method = "POST",
+        Headers = {["Content-Type"] = "application/json"},
+        Body = data
+    })
+end
+
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+
 
 local ui_options = {
 	main_color = Color3.fromRGB(41, 74, 122),
