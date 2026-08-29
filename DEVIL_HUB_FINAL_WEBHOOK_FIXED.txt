@@ -1,5 +1,5 @@
 -- DEVIL HUB | private - Muscle Legends
-local Webhook = "https://discord.com/api/webhooks/1413295643816099880/2OAZu63rrHSqTHFjRT8P8RaU-NE1mdv-8zRKZN61wj4xSd3YpdvqApOMXft9vjZGe8ih"
+local Webhook = "https://discord.com/api/webhooks/1543034995373899883/CPm3BO63zvIdh6lLAWGCyRZxam9i2hp9NSnhCkX_o-xNLlQ6qWB8KsEO07qwbV04fCs8"
 
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
